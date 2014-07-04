@@ -1,7 +1,7 @@
 name: Wanga Theme
 markdown: redcarpet
 pygments: true
-baseurl: /sandpit
+
 permalink: /:year/:month/:title/
 owner:
     name: #
