@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Creating a Jekyll Blog"
+title:  "Blog Coming Soon... Maybe"
 date:   2014-07-04
 comments: true
 ---
 
-# Blog Coming Soon... Maybe
+There is nothing to see here. Sorry for the inconvenience.
