@@ -50,3 +50,12 @@ This installs Jekyll and some dependencies. GitHub strongly recommends using bun
     path/to/site$ bundle exec jekyll serve
 
 This is obviously dependent on the previous commands.
+
+### Add Disqus Commenting Service
+
+Can be done in about 5 minutes.
+
+* Sign up to Disqus and register a new site. They will provide a shortname.
+* Add the shortname to the site properties in the _config.yml file.
+* If you start with a Jekyll template of some kind the Disqus code will probably be there already, otherwise cut and paste it. For Jekyll we use the 'Universal Code'.
+
