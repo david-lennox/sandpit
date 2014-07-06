@@ -1,16 +1,13 @@
 name: Wanga Theme
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 baseurl: /sandpit
 permalink: /:year/:month/:title/
 owner:
     name: #
     twitter: #
     github: #
-    disqus_shortname: davidlennox-sandpit
-    
+    disqus_shortname: davidlennox-sandpit    
 ga_id: #
-ga_username: #
-        
-timezone: #
-       
+ga_username: #        
+timezone: #     
