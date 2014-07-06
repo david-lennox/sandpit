@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>/2014/07/blog-coming-soon-maybe/</loc>
+        <loc>/sandpit/2014/07/blog-coming-soon-maybe/</loc>
     </url>
     
 
@@ -10,7 +10,7 @@
     
     
     <url>
-        <loc>/404.html</loc>
+        <loc>/sandpit/404.html</loc>
     </url>
     
     
@@ -18,7 +18,7 @@
     
     
     <url>
-        <loc>/</loc>
+        <loc>/sandpit/</loc>
     </url>
     
     
@@ -26,7 +26,15 @@
     
     
     <url>
-        <loc>/search.html</loc>
+        <loc>/sandpit/patterns/revealing-module/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>/sandpit/search.html</loc>
     </url>
     
     
@@ -38,7 +46,7 @@
     
     
     <url>
-        <loc>/tags.html</loc>
+        <loc>/sandpit/tags.html</loc>
     </url>
     
     
