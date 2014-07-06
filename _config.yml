@@ -3,6 +3,7 @@ markdown: redcarpet
 highlighter: pygments
 baseurl: /sandpit
 permalink: /:year/:month/:title/
+relative_permalinks: false
 owner:
     name: #
     twitter: #
