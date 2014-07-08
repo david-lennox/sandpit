@@ -25,6 +25,9 @@
 
         <!-- JQuery -->
         <script src="{{site.baseurl}}/assets/js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="{{site.baseurl}}/assets/js/yaml.js"></script>
+        <script type="text/javascript" src="{{site.baseurl}}/assets/js/angular.js"></script>
+        <script type="text/javascript" src="{{site.baseurl}}/assets/js/angular-ui-router.js"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,5 +35,59 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <script>
+    var myApp = angular.module("myApp", ['ui.router']);
+
+    myApp.factory('dataservice', ['$http', function($http) {
+        
+        return{
+            getReferences: function(){
+                return $http.get('http://localhost:8000/sandpit/ngData/references.yml');
+            }
+        }
+    }]);
+
+    myApp.run(function(dataservice, $rootScope){
+        dataservice.getReferences().then(function(refs){
+            $rootScope.references = refs.data;
+        })
+    })
+
+    myApp.directive("ref", function($rootScope){
+        return{
+            restrict: 'E',
+            scope: {
+                name: '@'
+            },
+            template: '<span>This is a refernece</span>',
+            link: function(scope, el, attrs){
+                var id = scope.name;
+                var refs = $rootScope.references;
+                debugger;
+            }
+        }
+    });
+
+    myApp.config(function($stateProvider, $urlRouterProvider){
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+        .state('shell', {
+            url: '/',
+            template: document.querySelector("#mainTemplate").outerText,
+            resolve: {
+                r: function(dataservice){
+                    return dataservice.getReferences();
+                }
+            }
+        })
+    })
+
+    </script>
+
     </head>
-    <body>
+
+    <body ng-app="myApp">
+
+    

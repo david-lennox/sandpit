@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>/sandpit/2014/07/how-to-use-jekyll/</loc>
+    </url>
+    
+    <url>
         <loc>/sandpit/2014/07/blog-coming-soon-maybe/</loc>
     </url>
     
@@ -18,7 +22,31 @@
     
     
     <url>
+        <loc>/sandpit/recipes/chicken-curry/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>/sandpit/pages/people/david-walker.html</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>/sandpit/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>/sandpit/page-</loc>
     </url>
     
     
@@ -40,6 +68,14 @@
     
     
     
+    
+    
+    
+    
+    
+    <url>
+        <loc>/sandpit/recipes/spaghetti-bolognaise/</loc>
+    </url>
     
     
     

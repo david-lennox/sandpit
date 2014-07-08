@@ -1,43 +1,30 @@
-{% include header.html %}
-<span class="statusbar"></span>
-{% include page-nav.html %}
+<!DOCTYPE html>
+<html>
 
-<!-- Wrap all page content here -->
-<div id="wrap">
-    <div class="container">
-        <div class="row row-offcanvas row-offcanvas-left">
-            <!-- side bar -->
-            <nav id="nav" role="navigation" class="col-sm-2 sidebar-offcanvas">
-                <header id="menu" role="banner">
-                    <p class="menu-title">Close</p>
-                    <a href="#nav" class="close-btn">Close</a>
-                </header>
-                <ul class="sidebar">
-                    <p class="separator">Navigation</p>
-                    <li><a href="{{site.baseurl}}/">Home</a></li>
-                    <li><a href="{{ site.baseurl }}/tags.html">Tags</a></li>
-                    <li><a href="{{ site.baseurl }}/search.html">Search</a></li>
-                    <p class="separator"><a href="https://github.com/nadjetey/wangana" class="block-title">About theme</a></p>
-                    <p class="separator">Social</p>
-                    <li><a href="https://github.com/{{site.owner.github}}">Github</a></li>
-                    <li><a href="https://twitter.com/{{site.owner.twitter}}">Twitter</a></li>
-                </ul>
-            </nav>
-            <header id="menu" role="banner">
-                <p class="menu-title">Menu</p>
-                <a href="#nav" class="menu-btn">navigation</a>
-            </header>
-            <!-- Content -->
-            <div class="content col-sm-10">
-                <div class="row strip">
-                    {{ content }}
-                </div>
-            </div>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>AngularJs Template</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-ui-router.min.js"></script>
+    <script src="assets/js/myApp.js"></script>
+
+    <script type="text/ng-template" id="content">
+    {{ content }}
+    </script>
+
+</head>
+
+<body>
+    <div ng-app="myApp">
+        <div class="container body-content">
+            <div ui-view></div>
         </div>
     </div>
-    <footer class="footer text-center blog-meta">
-        Powered by <a href="http://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/nadjetey/wangana">Wangana</a>
-    </footer>
-</div>
+    
+<script>
 
-{% include footer.html %}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="col-sm-12">
+    <div class="pages">
+        {% for page in site.pages %}
+        {% if page.permalink %}
+        <div class="page-li">
+            <p id="{{page.permalink}}">{{page.permalink}} | {{page.title}}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    $(".post-li .postlist-detail-indicator").click(function() {
+        var preview = $(this);
+        preview.text(preview.text()=='Expand +'?'Collapse -':'Expand +');
+
+        $(this).closest(".post-li").find(".postlist-detail").toggle("slow", function() {});
+    });
+</script>

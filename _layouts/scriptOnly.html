@@ -1,0 +1,16 @@
+---
+layout: nil
+---
+<html>
+<head>
+<script>
+(function(){
+	var newPage = {
+		title: {{ page.title }}
+		content: {{ content }}
+	}
+	app.allPages[{{ page.title }}] = newPage;
+}())
+</script>
+</head>
+</html>

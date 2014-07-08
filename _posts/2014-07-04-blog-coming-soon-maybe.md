@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Blog Coming Soon... Maybe"
+title:  Blog Coming Soon... Maybe
 date:   2014-07-04
 comments: true
 ---

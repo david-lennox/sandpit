@@ -2,39 +2,6 @@
 layout: default
 ---
 
-<div class="col-sm-12">
-    <div class="posts">
-        {% for post in site.posts %}
-        <div class="post-li">
-            <div class="col-sm-8">
-                <ul class="postlist-block">
-                    <li><time class="timeago postlist-meta" datetime="{{ post.date |  date: "%A %-d %B %Y" }}">{{ post.date }}</time>
-                    <a class="postlist-meta pull-right comments-meta" href="{{ site.baseurl }}{{ post.url }}#disqus_thread">0 <i class="fa fa-comments-o fa-lg"></i></a></li>
-                    <li><a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                </ul>
-            </div>
+<h1>This is the Index Page</h1>
 
-            <div class="col-sm-4 hide-on-phone">
-                <ul class="postlist-block pull-right postlist-meta">
-                    <li><a href="{{ site.baseurl }}{{ post.url }}#disqus_thread">0 <i class="fa fa-comments-o fa-lg"></i></a></li>
-                    <li><a href="{{ site.baseurl }}{{ post.url }}">Read more <i class="fa fa-chevron-right"></i></a></li>
-                    <li><strong><a class="postlist-detail-indicator">Expand +</a></strong></li>
-                </ul>
-            </div>
-
-            <div class="col-sm-12 postlist-detail">
-                {{post.excerpt}}
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-
-<script>
-    $(".post-li .postlist-detail-indicator").click(function() {
-        var preview = $(this);
-        preview.text(preview.text()=='Expand +'?'Collapse -':'Expand +');
-
-        $(this).closest(".post-li").find(".postlist-detail").toggle("slow", function() {});
-    });
-</script>
+<p>And Walker <ref nick="Walker2012" inclName="true" /> believed it was impossible.</p>

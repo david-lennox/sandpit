@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<section class="docs">
+  <div class="grid">
+
+    <div class="unit four-fifths">
+      <article>
+        <h1>{{ page.title }}</h1>
+
+        {% if page.imgMain %}
+
+        <img src="{{site.baseurl}}{{ site.imgs }}/{{page.imgMain.img}}" alt="{{page.imgMain.alt}}" />
+
+        {% endif %}
+
+        <h2>Ingredients</h2>
+
+        {% for i in page.ingredients %}
+        <ul>
+          <li>{{i}}</li>
+        </ul>
+        {% endfor %}
+
+        <table class="table">
+          {% for heading in page.tableHeadings %}
+          <th>{{ heading }}</th>
+          {% endfor %}          
+
+          {% for row in page.ingredients %}
+          <tr>
+            {% for field in row %}
+            <td>{{ field }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </table>
+
+        {{ content }}
+
+        {% for i in page.imgGallery %}
+        <p><img src="{{site.baseurl}}{{ site.imgs }}/{{i.img}}" alt="{{i.alt}}"/></p>
+        {% endfor %}
+
+      </article>
+    </div>
+
+  </div>
+</section>
