@@ -1,7 +1,5 @@
 ---
 title: Chicken Curry
-permalink: /recipes/chicken-curry/
-draft: true
 layout: recipe
 tableHeadings: [Ingredients, Preparation, Sequence]
 ingredients:
