@@ -1,5 +1,4 @@
 ---
-title: Chicken Curry
 layout: recipe
 tableHeadings: [Ingredients, Preparation, Sequence]
 ingredients:

@@ -2,8 +2,8 @@ name: Wanga Theme
 markdown: kramdown
 highlighter: pygments
 baseurl: /sandpit
+permalink: /blog/:year/:title
 imgs: /assets/imgs
-permalink: /:year/:month/:title/
 relative_permalinks: false
 owner:
     name: #

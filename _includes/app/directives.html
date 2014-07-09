@@ -1,0 +1,18 @@
+<script>
+    var myApp = angular.module('myApp');
+
+    myApp.directive("ref", function($rootScope){
+        return{
+            restrict: 'E',
+            scope: {
+                name: '@'
+            },
+            template: '<span>This is a refernece</span>',
+            link: function(scope, el, attrs){
+                var id = scope.name;
+                var refs = $rootScope.references;
+                debugger;
+            }
+        }
+    });
+</script>

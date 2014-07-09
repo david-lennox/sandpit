@@ -1,7 +1,6 @@
 ---
 categories: 
 layout: post
-title: How to Use Jekyll
 date: 2014-07-06
 tags:
 - instructions

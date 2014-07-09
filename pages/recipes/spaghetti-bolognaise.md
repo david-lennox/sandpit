@@ -1,7 +1,4 @@
 ---
-title: Spaghetti Bolognaise
-permalink: /recipes/spaghetti-bolognaise/
-draft: true
 layout: recipe
 ingredients:
 - tomatos

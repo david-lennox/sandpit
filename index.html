@@ -4,49 +4,29 @@
 <html>
 
 <head lang="en">
-    <meta charset="UTF-8" />
-    <title>AngularJs Template</title>
+    <meta charset="UTF-8"/>
+    <title>Angular-Jekyll</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <script src="assets/js/angular.js"></script>
     <script src="assets/js/angular-ui-router.min.js"></script>
-
-    <script>
-        var myApp = angular.module('myApp', ['ui.router']);
-
-        myApp.config(function ($stateProvider, $urlRouterProvider) {
-
-            $urlRouterProvider.otherwise('/recipes/chicken-curry');
-
-            $stateProvider
-
-            .state('recipes-chicken-curry', {
-                url: '/recipes/chicken-curry',
-                templateUrl: '{{site.baseurl}}/pages/recipes/chicken-curry.html'
-            });
-        });    
-    </script>
+    {% include app/start.html %}
+    {% include app/services.html %}
+    {% include app/directives.html %}
 
 </head>
 
 <body>
-    <div ng-app="myApp">
+<div ng-app="myApp">
+
+    <div  ng-controller="index as vm">
         <div class="container body-content">
             <div ui-view></div>
         </div>
+
     </div>
 
-    <div>
-        <h1>The Page URLs</h1>
-        {% for p in site.pages %}
+</div>
 
-        <p>{{ p.url }}</p>
-
-        {% endfor %}
-    </div>
-    
-<script>
-
-</script>
 </body>
 
 </html>

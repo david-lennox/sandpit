@@ -1,0 +1,91 @@
+<script>
+
+    var myApp = angular.module('myApp', ['ui.router']);
+
+    myApp.run(function(dataservice, $rootScope){
+        dataservice.getReferences().then(function(refs){
+            $rootScope.references = refs.data;
+        })
+    });
+
+    myApp.config(function ($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/');
+
+        var pages = [];
+
+        // {% for p in site.pages %}{% if p.url contains '.html' %}{% unless p.url contains 'index.html' %}
+        pages.push({ url: '{{ p.url }}', title: '{{ p.title }}' });// {% endunless %}{% endif %}{% endfor %}
+
+        // {% for p in site.posts %}
+        pages.push({ url: '{{ p.url }}'
+            // {% if p.title %}
+            ,title: '{{ p.title }}' //{% endif %}
+        });//{% endfor %}
+
+        for (i = 0; i < pages.length; i++){
+            $stateProvider.state(getIdFromUrl(pages[i].url), {
+                url: pages[i].url.replace(/^\/pages|\.[a-z]{2,4}$/gm, ''),
+                templateUrl: '{{ site.baseurl }}' + pages[i].url,
+                data: {
+                    title: getTitle(pages[i]),
+                    pathArray: getPathArray(pages[i].url)
+                },
+                resolve: {
+                    r: function(dataservice){
+                        return dataservice.getReferences();
+                    }
+                }
+            });
+        }
+
+        $stateProvider.state('default', {
+            url: '/',
+            templateUrl: '{{ site.baseurl }}' + '/toc.html',
+            data: {
+                title: 'Home View'
+            },
+            resolve: {
+                r: function(dataservice){
+                    return dataservice.getReferences();
+                }
+            }
+        });
+
+        function getIdFromUrl(x) {
+            return x.replace(/^[\/]+|[\/]+$/gm, '').replace(/\//g, '-').replace(/\.[a-z]{2,4}$/, '');
+        }
+
+        function getTitle(page) {
+            if(page.title) return page.title;
+            var titleRegex = /\/([^./]+)\.html$/;
+            var match = titleRegex.exec(page.url);
+            var title = match[1];
+            return toTitleCase(title.replace('-', ' '));
+        }
+
+        function getPathArray(path){
+            var segments = path.match(/[^/]+\//g);
+            if(segments){
+                return segments.map(function(seg){
+                    return seg.replace('/', '');
+                });
+            }
+            return [];
+        }
+
+        function toTitleCase(str)
+        {
+            return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        }
+    });
+
+    myApp.controller('index', function($state){
+        this.states = $state.get();
+    });
+
+    myApp.controller('toc', function($state){
+        this.states = $state.get();
+    });
+
+</script>

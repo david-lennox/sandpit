@@ -1,0 +1,12 @@
+---
+---
+{% raw %}
+<div ng-controller="toc as vm">
+    <ul ng-repeat="state in vm.states">
+        <li ng-if="state.data.title">
+            <span ng-if="state.data.pathArray.length > 0" ng-repeat="path in state.data.pathArray">{{path}} | </span>
+            <a ui-sref="{{state.name}}">{{state.data.title}}</a>
+        </li>
+    </ul>
+</div>
+{% endraw %}

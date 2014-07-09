@@ -1,7 +1,6 @@
 ---
 layout: patterns
 title: Revealing Module
-permalink: /patterns/revealing-module/
 ---
 
 ## Description
