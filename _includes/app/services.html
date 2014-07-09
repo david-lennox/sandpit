@@ -8,7 +8,7 @@
         return{
             getReferences: function(refresh){
                 if (!referencesFetched || refresh) {
-                    referencesPromise = $http.get('http://localhost:8000/sandpit/ngData/references.yml');
+                    referencesPromise = $http.get('{{ site.baseurl }}/ngData/references.yml');
                     referencesFetched = true;
                 }
                 return referencesPromise;
